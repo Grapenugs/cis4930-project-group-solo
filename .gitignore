@@ -1,1 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+#Data file
+proj2-automated-data-pipeline/data/raw/*
+proj2-automated-data-pipeline/logs/*.log
+
+# Mac
+.DS_Store
+
+# Jupyter notebook checkpoints
 .ipynb_checkpoints/
