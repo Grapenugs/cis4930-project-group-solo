@@ -23,7 +23,7 @@ def fetch_repos_page(query="python", page=1, per_page=30):
 
             data = response.json()  #Get the data as json object
             return data.get('items', [])    #safely try to access data, default []
-
+        
         except requests.exceptions.Timeout:
             print(f"Request timed out on page: {page}.")
             logging.error(f"Request timed out on page {page}.")
@@ -44,11 +44,16 @@ def fetch_repos(query="python", max_pages=3):
     repos = []
 
     for page in range(1, max_pages+1):
+        print(f"Fetching page {page}")
         logging.info(f"Fetching page {page}")
+        
         items = fetch_repos_page(query=query, page=page)
-
         if not items:
             break
+
+        print(f"Page {page} fetched, {len(items)} records")
+        logging.info(f"Page {page} fetched, {len(items)} records")
+
 
         repos.extend(items)
     return repos
