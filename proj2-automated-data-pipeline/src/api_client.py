@@ -53,39 +53,3 @@ def fetch_repos(query="python", max_pages=3):
         repos.extend(items)
     return repos
 
-
-
-
-
-
-
-"""
-print(response.url)
-data = response.json()
-
-items = data.get('items', [])
-
-#if not items:
-#    break
-
-records = []
-for item in items:
-    record = {
-        "full_name": item.get("full_name"),
-        "description": item.get("description", "None"),
-        "stars": item.get("stargazers_count", 0),
-        "forks": item.get("forks_count", 0),
-        "language": item.get("language", "Unknown")
-    }
-    records.append(record)
-
-for record in records:
-    print(
-        f"Full Name: {record['full_name']}\n",
-        f"Description: {record['description']}\n",
-        f"Stars: {record['stars']}\n",
-        f"Forks: {record['forks']}\n",
-        f"Language: {record['language']}"
-    )
-    print('----------------------------------------------')
-"""
